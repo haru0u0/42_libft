@@ -6,18 +6,20 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:45:52 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/05 20:54:44 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:22:41 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stddef.h>
 
-size_t	strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
 	i = 0;
-	while (s != 0)
+	while (*s != 0)
 	{
 		i++;
+		s++;
 	}
 
 	return(i);
