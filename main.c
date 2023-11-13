@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:30:32 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/12 21:38:17 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/13 22:46:35 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,74 @@
 #include <bsd/string.h>
 #include <ctype.h>
 #include "libft.h"
+
+void test_ft_strrchr()
+{
+	char str[] = "Hello World";
+	int c;
+
+	c = 0;
+	printf("\n------------------ft_strrchr--------------------\n");
+	printf("c: result of strrchr(Hello World, c), result of ft_strrchr(Hello World, c)\n");
+	while (c <= 127)
+	{
+		if (strrchr (str, c) == NULL && ft_strrchr (str, c) == NULL)
+		{
+			printf("%c: NULL, NULL\n", c);
+		}
+		else if (strrchr (str, c) != NULL && ft_strrchr (str, c) != NULL)
+		{
+			if (*(strrchr (str, c)) == '\0' && *(ft_strrchr(str, c)) == '\0')
+			{
+				printf("'0': '0', '0'\n");
+			}
+			else
+			{
+			printf("%c: %s, %s\n", c, strrchr (str, c), ft_strrchr(str, c));
+			}
+		}
+		else
+		{
+			printf("does not match!!!!");
+		}
+	c++;
+	}
+}
+
+
+void test_ft_strchr()
+{
+	char str[] = "Hello World";
+	int c;
+
+	c = 0;
+	printf("\n------------------ft_strchr--------------------\n");
+	printf("c: result of strchr(Hello World, c), result of ft_strchr(Hello World, c)\n");
+
+	while (c <= 127)
+	{
+		if (strchr (str, c) == NULL && ft_strchr (str, c) == NULL)
+		{
+			printf("%c: NULL, NULL\n", c);
+		}
+		else if (strchr (str, c) != NULL && ft_strchr (str, c) != NULL)
+		{
+			if (*(strchr (str, c)) == '\0' && *(ft_strchr(str, c)) == '\0')
+			{
+				printf("'0': '0', '0'\n");
+			}
+			else
+			{
+			printf("%c: %c, %c\n", c, *(strchr (str, c)), *(ft_strchr(str, c)));
+			}
+		}
+		else
+		{
+			printf("does not match!!!!");
+		}
+	c++;
+	}
+}
 
 void test_ft_tolower()
 {
@@ -252,6 +320,8 @@ int	main(void)
 	test_ft_strlcat();
 	test_ft_toupper();
 	test_ft_tolower();
+	test_ft_strchr();
+	test_ft_strrchr();
 	return (0);
 }
 
