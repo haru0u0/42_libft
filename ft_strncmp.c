@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 22:01:20 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/15 17:55:02 by hsenzaki         ###   ########.fr       */
+/*   Created: 2023/11/15 18:00:34 by hsenzaki          #+#    #+#             */
+/*   Updated: 2023/11/15 18:25:54 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-
-char *ft_strrchr(const char *s, int c)
+#include <stddef.h>
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	count;
+	size_t	count;
 
 	count = 0;
-	while (*s != '\0')
+	while ((*s1 != '\0' || *s2 != '\0') && count < n)
 	{
-		s++;
+		if (*s1 != *s2)
+		{
+			return (*s1 - *s2);
+		}
+		s1++;
+		s2++;
 		count++;
 	}
-	s++;
-	count++;
-	while (count >= 0)
-	{
-		if (*s == c)
-		{
-			return ((char *)s);
-		}
-		s--;
-		count--;
-	}
-
-	return (NULL);
+	return (0);
 }
-

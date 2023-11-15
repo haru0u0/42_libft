@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:30:32 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/13 22:46:35 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/15 20:28:03 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,81 @@
 #include <ctype.h>
 #include "libft.h"
 
+void test_ft_strdup()
+{
+}
+
+void test_ft_calloc()
+{
+}
+
+void test_ft_atoi()
+{
+}
+
+void test_ft_strnstr()
+{
+	char big[] = "Hello World";
+	char little[] = "Wo";
+
+	printf("\n------------------ft_strnstr--------------------\n");
+	printf("Hello World, Wo, 5: %s, %s\n", strnstr(big, little, 5), ft_strnstr(big, little, 5));
+	printf("Hello World, Wo, 12: %s, %s\n", strnstr(big, little, 12), ft_strnstr(big, little, 12));
+	printf("Hello World, Wo, 7: %s, %s\n", strnstr(big, little, 7), ft_strnstr(big, little, 7));
+	printf("Wo, Hello World, 7: %s, %s\n", strnstr(little, big, 7), ft_strnstr(little, big, 7));
+}
+
+void test_ft_memcmp()
+{
+
+}
+
+void test_ft_memchr()
+{
+	char str[] = "Hello World";
+	int c;
+
+	c = 0;
+	printf("\n------------------ft_memchr--------------------\n");
+	printf("c: result of memchr(Hello World, c, 12), result of ft_memchr(Hello World, c, 12)\n");
+
+	while (c <= 127)
+	{
+		if (memchr (str, c, 12) == NULL && ft_memchr (str, c, 12) == NULL)
+		{
+			printf("%c: NULL, NULL\n", c);
+		}
+		else if (memchr (str, c, 12) != NULL && ft_memchr (str, c, 12) != NULL)
+		{
+			if (*((char *)memchr (str, c, 12)) == '\0' && *((char *)ft_memchr(str, c, 12)) == '\0')
+			{
+				printf("'0': '0', '0'\n");
+			}
+			else
+			{
+			printf("%c: %s, %s\n", c, (char *)memchr (str, c, 12), (char *)ft_memchr(str, c, 12));
+			}
+		}
+		else
+		{
+			printf("does not match!!!!");
+		}
+	c++;
+	}
+
+}
+
+void test_ft_strncmp()
+{
+	printf ("\n------------------ft_strncmp--------------------\n");
+	printf ("params: strncmp, ft_strcmp\n");
+	printf ("ABC, AB, 3: %d, %d\n",strncmp ("ABC", "AB", 3), ft_strncmp ("ABC", "AB", 3));
+	printf ("ABC, AB, 2: %d, %d\n",strncmp ("ABC", "AB", 2), ft_strncmp ("ABC", "AB", 2));
+	printf ("AB, ABC, 3: %d, %d\n",strncmp ("AB", "ABC", 3), ft_strncmp ("AB", "ABC", 3));
+	printf ("AB, ABC, 2: %d, %d\n",strncmp ("AB", "ABC", 2), ft_strncmp ("AB", "ABC", 2));
+	printf ("ABC, ABC, 3: %d, %d\n",strncmp ("ABC", "ABC", 3), ft_strncmp ("ABC", "ABC", 3));
+}
+
 void test_ft_strrchr()
 {
 	char str[] = "Hello World";
@@ -29,11 +104,11 @@ void test_ft_strrchr()
 	printf("c: result of strrchr(Hello World, c), result of ft_strrchr(Hello World, c)\n");
 	while (c <= 127)
 	{
-		if (strrchr (str, c) == NULL && ft_strrchr (str, c) == NULL)
+		if (strrchr (str, c) == NULL && ft_strrchr(str, c) == NULL)
 		{
 			printf("%c: NULL, NULL\n", c);
 		}
-		else if (strrchr (str, c) != NULL && ft_strrchr (str, c) != NULL)
+		else if (strrchr (str, c) != NULL && ft_strrchr(str, c) != NULL)
 		{
 			if (*(strrchr (str, c)) == '\0' && *(ft_strrchr(str, c)) == '\0')
 			{
@@ -41,7 +116,7 @@ void test_ft_strrchr()
 			}
 			else
 			{
-			printf("%c: %s, %s\n", c, strrchr (str, c), ft_strrchr(str, c));
+			printf("%c: %s, %s\n", c, strrchr(str, c), ft_strrchr(str, c));
 			}
 		}
 		else
@@ -76,7 +151,7 @@ void test_ft_strchr()
 			}
 			else
 			{
-			printf("%c: %c, %c\n", c, *(strchr (str, c)), *(ft_strchr(str, c)));
+			printf("%c: %s, %s\n", c, strchr (str, c), ft_strchr(str, c));
 			}
 		}
 		else
@@ -322,6 +397,13 @@ int	main(void)
 	test_ft_tolower();
 	test_ft_strchr();
 	test_ft_strrchr();
+	test_ft_strncmp();
+	test_ft_memchr();
+	test_ft_memcmp();
+	test_ft_strnstr();
+	test_ft_atoi();
+	test_ft_calloc();
+	test_ft_strdup();
 	return (0);
 }
 
