@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:30:32 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/15 20:28:03 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/15 21:39:44 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,34 @@ void test_ft_strdup()
 
 void test_ft_calloc()
 {
+	int i, n;
+	int *a;
+
+	printf("\n------------------ft_calloc--------------------\n");
+	printf("Number of elements to be entered:");
+	scanf("%d",&n);
+	a = (int*)ft_calloc(n, sizeof(int));
+	printf("Enter %d numbers:\n",n);
+	for( i=0 ; i < n ; i++ )
+	{
+		scanf("%d",&a[i]);
+	}
+	printf("The numbers entered are: ");
+	for( i=0 ; i < n ; i++ )
+	{
+	printf("%d ",a[i]);
+	}
+	free( a );
 }
 
 void test_ft_atoi()
 {
+	printf("\n------------------ft_atoi--------------------\n");
+	printf ("param: atoi, ft_atoi\n");
+	printf ("123: %d, %d\n", atoi("123"), ft_atoi("123"));
+	printf ("1a3: %d, %d\n", atoi("1a3"), ft_atoi("1a3"));
+	printf ("0: %d, %d\n", atoi("0"), ft_atoi("0"));
+	printf ("a: %d, %d\n", atoi("a"), ft_atoi("a"));
 }
 
 void test_ft_strnstr()
@@ -37,6 +61,7 @@ void test_ft_strnstr()
 	char little[] = "Wo";
 
 	printf("\n------------------ft_strnstr--------------------\n");
+	printf ("params: strnstr, ft_strnstr\n");
 	printf("Hello World, Wo, 5: %s, %s\n", strnstr(big, little, 5), ft_strnstr(big, little, 5));
 	printf("Hello World, Wo, 12: %s, %s\n", strnstr(big, little, 12), ft_strnstr(big, little, 12));
 	printf("Hello World, Wo, 7: %s, %s\n", strnstr(big, little, 7), ft_strnstr(big, little, 7));
@@ -45,6 +70,15 @@ void test_ft_strnstr()
 
 void test_ft_memcmp()
 {
+	printf ("\n------------------ft_memcmp--------------------\n");
+	printf ("params: memcmp, ft_memcmp\n");
+	printf ("ABC, AB, 3: %d, %d\n",memcmp ("ABC", "AB", 3), ft_memcmp ("ABC", "AB", 3));
+	printf ("ABC, AB, 2: %d, %d\n",memcmp ("ABC", "AB", 2), ft_memcmp ("ABC", "AB", 2));
+	printf ("AB, ABC, 3: %d, %d\n",memcmp ("AB", "ABC", 3), ft_memcmp ("AB", "ABC", 3));
+	printf ("AB, ABC, 2: %d, %d\n",memcmp ("AB", "ABC", 2), ft_memcmp ("AB", "ABC", 2));
+	printf ("ABC, ABC, 3: %d, %d\n",memcmp ("ABC", "ABC", 3), ft_memcmp ("ABC", "ABC", 3));
+	printf ("ABC, ABC, 0: %d, %d\n",memcmp ("ABC", "ABC", 0), ft_memcmp ("ABC", "ABC", 0));
+
 
 }
 
