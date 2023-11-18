@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:14:29 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/13 20:58:56 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/18 19:04:09 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -15,13 +15,13 @@ char *ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{
-		if (*s == c)
+		if (*s == (c % 256))
 		{
 			return ((char *)s);
 		}
 		s++;
 	}
-	if (c == '\0')
+	if ((c % 256) == '\0')
 	{
 		return ((char *)s);
 	}

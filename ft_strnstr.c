@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:52:53 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/15 20:31:26 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/18 19:30:38 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stddef.h>
@@ -32,7 +32,11 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	int	count;
 
 	count = 0;
-	while (*big != '\0' && count + ft_strlen(little) < len)
+	if (*little == '\0')
+	{
+		return ((char *)big);
+	}
+	while (*big != '\0' && count + ft_strlen(little) <= len)
 	{
 		if (*big == *little)
 		{

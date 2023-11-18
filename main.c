@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:30:32 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/15 21:39:44 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/18 20:38:52 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,19 @@
 #include <bsd/string.h>
 #include <ctype.h>
 #include "libft.h"
+#include <stdint.h>
+#include <limits.h>
 
 void test_ft_strdup()
 {
+	char	src1[] = "Hello World";
+	char	src2[] = "Hello World";
+	char	*target1 = strdup(src1);
+	char	*target2 = ft_strdup(src2);
+
+	printf("\n------------------ft_strdup--------------------\n");
+	printf ("params: strdup, ft_strdup\n");
+	printf("Hello World: %s, %s", target1, target2);
 }
 
 void test_ft_calloc()
@@ -43,16 +53,36 @@ void test_ft_calloc()
 	printf("%d ",a[i]);
 	}
 	free( a );
+	printf("\n%s, %s\n", (char *)calloc(SIZE_MAX, SIZE_MAX), (char *)ft_calloc(SIZE_MAX, SIZE_MAX));
+	printf("SIZE_MAX: %lu\n", SIZE_MAX);
+	printf("INT_MAX: %d\n", INT_MAX);
+	printf("SIZE_MAX * SIZE_MAX: %lu\n", SIZE_MAX * SIZE_MAX);
+	printf("SIZE_MAX * SIZE_MAX: %lu\n", 18446744073709551615 * 18446744073709551615);
+	if (SIZE_MAX * SIZE_MAX > INT_MAX)
+	{
+		printf("YES");
+	}
+	else
+	{
+		printf("NO");
+	}
 }
 
 void test_ft_atoi()
 {
+	char e[] = {9, 10, 11, 12, 13, '1', 0};
+
 	printf("\n------------------ft_atoi--------------------\n");
 	printf ("param: atoi, ft_atoi\n");
 	printf ("123: %d, %d\n", atoi("123"), ft_atoi("123"));
 	printf ("1a3: %d, %d\n", atoi("1a3"), ft_atoi("1a3"));
 	printf ("0: %d, %d\n", atoi("0"), ft_atoi("0"));
 	printf ("a: %d, %d\n", atoi("a"), ft_atoi("a"));
+	printf ("1: %d, %d\n", atoi("1"), ft_atoi("1"));
+	printf ("+1: %d, %d\n", atoi("+1"), ft_atoi("+1"));
+	printf ("-1: %d, %d\n", atoi("-1"), ft_atoi("-1"));
+	printf ("  -1: %d, %d\n", atoi("  -1"), ft_atoi("  -1"));
+	printf ("9, 10, 11, 12, 13, '1', 0: %d, %d\n", atoi(e), ft_atoi(e));
 }
 
 void test_ft_strnstr()
@@ -66,10 +96,13 @@ void test_ft_strnstr()
 	printf("Hello World, Wo, 12: %s, %s\n", strnstr(big, little, 12), ft_strnstr(big, little, 12));
 	printf("Hello World, Wo, 7: %s, %s\n", strnstr(big, little, 7), ft_strnstr(big, little, 7));
 	printf("Wo, Hello World, 7: %s, %s\n", strnstr(little, big, 7), ft_strnstr(little, big, 7));
+	printf("Hello World, "", 7: %s, %s\n", strnstr(big, "", 7), ft_strnstr(big, "", 7));
 }
 
 void test_ft_memcmp()
 {
+	char s[] = {127, 0, 127, 0};
+	char s2[] = {42, 0, 42, 0};
 	printf ("\n------------------ft_memcmp--------------------\n");
 	printf ("params: memcmp, ft_memcmp\n");
 	printf ("ABC, AB, 3: %d, %d\n",memcmp ("ABC", "AB", 3), ft_memcmp ("ABC", "AB", 3));
@@ -78,8 +111,7 @@ void test_ft_memcmp()
 	printf ("AB, ABC, 2: %d, %d\n",memcmp ("AB", "ABC", 2), ft_memcmp ("AB", "ABC", 2));
 	printf ("ABC, ABC, 3: %d, %d\n",memcmp ("ABC", "ABC", 3), ft_memcmp ("ABC", "ABC", 3));
 	printf ("ABC, ABC, 0: %d, %d\n",memcmp ("ABC", "ABC", 0), ft_memcmp ("ABC", "ABC", 0));
-
-
+	printf ("this!!: %d",ft_memcmp(s, s2, 4));
 }
 
 void test_ft_memchr()
@@ -165,6 +197,7 @@ void test_ft_strrchr()
 void test_ft_strchr()
 {
 	char str[] = "Hello World";
+	char s[] = "tripouille";
 	int c;
 
 	c = 0;
@@ -194,6 +227,7 @@ void test_ft_strchr()
 		}
 	c++;
 	}
+	printf("this!!!: %s, %s\n", strchr(s, 't' + 256), ft_strchr(s, 't' + 256));
 }
 
 void test_ft_tolower()

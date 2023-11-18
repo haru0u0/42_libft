@@ -1,33 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 20:49:47 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 19:12:14 by hsenzaki         ###   ########.fr       */
+/*   Created: 2023/11/18 16:51:16 by hsenzaki          #+#    #+#             */
+/*   Updated: 2023/11/18 17:00:09 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+char *ft_strtrim(char const *s1, char const *set)
 {
-	size_t	srclen;
 
-	srclen = ft_strlen (src);
-	if (size == 0)
-	{
-		return(srclen);
-	}
-	while (size != 1 && *src != '\0')
-	{
-		*dst = *src;
-		dst++;
-		src++;
-		size--;
-	}
-	*dst = '\0';
-	return(srclen);
 }
-

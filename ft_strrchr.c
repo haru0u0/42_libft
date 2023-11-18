@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:01:20 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/15 17:55:02 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/18 19:05:53 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -25,7 +25,7 @@ char *ft_strrchr(const char *s, int c)
 	count++;
 	while (count >= 0)
 	{
-		if (*s == c)
+		if (*s == (c % 256))
 		{
 			return ((char *)s);
 		}

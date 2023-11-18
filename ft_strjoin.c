@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/12 20:49:47 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 19:12:14 by hsenzaki         ###   ########.fr       */
+/*   Created: 2023/11/18 16:40:34 by hsenzaki          #+#    #+#             */
+/*   Updated: 2023/11/18 16:49:42 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
-
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+#include"libft.h"
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	srclen;
+	char	*dest;
+	char	*dest_cpy;
 
-	srclen = ft_strlen (src);
-	if (size == 0)
+	dest = malloc(ft_strlen(s1) + ft_srlen(s2));
+	if (dest == NULL)
 	{
-		return(srclen);
+		return (NULL);
 	}
-	while (size != 1 && *src != '\0')
+	dest = dest_cpy;
+	while(*s1 != '\0')
 	{
-		*dst = *src;
-		dst++;
-		src++;
-		size--;
+		*dest = *s1;
+		dest++;
+		s1++;
 	}
-	*dst = '\0';
-	return(srclen);
+	while(*s2 != '\0')
+	{
+		*dest = *s2;
+		dest++;
+		s2++;
+	}
+	*dest = '\0';
+	return(dest_cpy)
 }
-

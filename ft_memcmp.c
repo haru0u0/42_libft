@@ -6,26 +6,23 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:34:51 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/15 20:49:55 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/18 18:38:37 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include<stddef.h>
+#include<stdio.h>
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char *s1_casted;
-	char *s2_casted;
-
-	s1_casted = (char *)s1;
-	s2_casted = (char *)s2;
-
-	while ((*s1_casted != '\0' || *s2_casted != '\0') && n != 0)
+	//unsigned char	*s1_casted;
+	//unsigned char	*s2_casted;
+	while (n != 0)
 	{
-		if (*s1_casted != *s2_casted)
+		if (*((unsigned char *)s1) != *((unsigned char *)s2))
 		{
-			return (*s1_casted - *s2_casted);
+			return (*((unsigned char *)s1) - *((unsigned char *)s2));
 		}
-		s1_casted++;
-		s2_casted++;
+		s1++;
+		s2++;
 		n--;
 	}
 	return (0);
