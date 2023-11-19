@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:30:32 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 20:38:52 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:13:17 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,23 @@
 #include <stdint.h>
 #include <limits.h>
 
+void test_ft_split()
+{
+	char const str[] = "HELLO! WORLD hello world";
+	char c = ' ';
+	char	**dest;
+	int	adx;
+
+	adx = 0;
+	dest = ft_split(str, c);
+
+	printf("\n------------------ft_split--------------------\n");
+	while(adx<= 3)
+	{
+		printf("%s\n", dest[adx]);
+		adx++;
+	}
+}
 void test_ft_strdup()
 {
 	char	src1[] = "Hello World";
@@ -53,19 +70,6 @@ void test_ft_calloc()
 	printf("%d ",a[i]);
 	}
 	free( a );
-	printf("\n%s, %s\n", (char *)calloc(SIZE_MAX, SIZE_MAX), (char *)ft_calloc(SIZE_MAX, SIZE_MAX));
-	printf("SIZE_MAX: %lu\n", SIZE_MAX);
-	printf("INT_MAX: %d\n", INT_MAX);
-	printf("SIZE_MAX * SIZE_MAX: %lu\n", SIZE_MAX * SIZE_MAX);
-	printf("SIZE_MAX * SIZE_MAX: %lu\n", 18446744073709551615 * 18446744073709551615);
-	if (SIZE_MAX * SIZE_MAX > INT_MAX)
-	{
-		printf("YES");
-	}
-	else
-	{
-		printf("NO");
-	}
 }
 
 void test_ft_atoi()
@@ -472,6 +476,7 @@ int	main(void)
 	test_ft_atoi();
 	test_ft_calloc();
 	test_ft_strdup();
+	test_ft_split();
 	return (0);
 }
 
