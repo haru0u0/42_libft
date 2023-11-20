@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 01:23:07 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:12:41 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:13:23 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	len;
 

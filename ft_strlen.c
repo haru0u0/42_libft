@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 20:45:52 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:14:26 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:16:38 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -21,6 +21,5 @@ size_t	ft_strlen(const char *s)
 		i++;
 		s++;
 	}
-
-	return(i);
+	return (i);
 }

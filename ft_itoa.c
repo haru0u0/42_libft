@@ -6,27 +6,27 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 22:50:26 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:10:37 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:27:55 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char	*dest;
 	int		digit;
-	bool isNegative;
-	bool isIntmin;
-	int	n_cpy;
+	bool	isnegative;
+	bool	isintmin;
+	int		n_cpy;
 
 	digit = 0;
-	isNegative = false;
-	isIntmin = false;
+	isnegative = false;
+	isintmin = false;
 	if (n < 0)
 	{
-		if(n == -2147483648)
+		if (n == -2147483648)
 		{
-			isIntmin = true;
+			isintmin = true;
 			n = (n + 1) * -1;
 		}
 		else
@@ -34,58 +34,49 @@ char *ft_itoa(int n)
 			n = n * -1;
 		}
 		digit++;
-		isNegative = true;
+		isnegative = true;
 	}
-
 	n_cpy = n;
-	if(n == 0)
+	if (n == 0)
 	{
 		digit++;
 	}
-	while(n != 0)
+	while (n != 0)
 	{
 		n = n / 10;
 		digit++;
 	}
-
 	dest = malloc((digit + 1) * sizeof(char));
-
 	if (dest == NULL)
 	{
 		return (NULL);
 	}
-
-	while(digit != 0)
+	while (digit != 0)
 	{
 		dest++;
 		digit--;
 	}
-
 	*dest = '\0';
 	dest--;
-
 	n = n_cpy;
-	if(n == 0)
+	if (n == 0)
 	{
 		dest = "0";
-		return(dest);
+		return (dest);
 	}
-
-	if(isIntmin == true)
+	if (isintmin == true)
 	{
 		*dest = ((n % 10) + 1) + '0';
 		n = n / 10;
 		dest--;
 	}
-
-	while(n != 0)
+	while (n != 0)
 	{
 		*dest = (n % 10) + '0';
 		n = n / 10;
 		dest--;
 	}
-
-	if(isNegative == true)
+	if (isnegative == true)
 	{
 		*dest = '-';
 	}

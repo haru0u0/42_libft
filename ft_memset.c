@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 17:21:30 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:11:54 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:21:15 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void *ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	char	*ptr;
 

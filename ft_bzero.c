@@ -6,16 +6,16 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 16:51:39 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:07:33 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:24:09 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*s_cpy;
-	s_cpy = (char *)s;
 
+	s_cpy = (char *)s;
 	while (n != 0)
 	{
 		*s_cpy = '\0';

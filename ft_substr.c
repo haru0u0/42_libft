@@ -6,20 +6,18 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:27:10 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:16:39 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:09:08 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start, size_t len)
+char	*memory(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
-	char	*dest_cpy;
 
-	if(start > ft_strlen(s) - 1)
+	if (start > ft_strlen(s) - 1)
 	{
 		dest = malloc(1);
-		return(dest);
 	}
 	else if (ft_strlen(s) - start < len)
 	{
@@ -33,17 +31,17 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	{
 		dest = malloc(len + 1);
 	}
-	dest_cpy = dest;
-	if (dest == NULL)
-	{
-		return(NULL);
-	}
+	return (dest);
+}
+
+void	copy(char const *s, unsigned int start, size_t len, char *dest)
+{
 	while (start != 0)
 	{
 		s++;
 		start--;
 	}
-	while(*s != '\0' && len != 0)
+	while (*s != '\0' && len != 0)
 	{
 		*dest = *s;
 		s++;
@@ -51,5 +49,21 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		len--;
 	}
 	*dest = '\0';
-	return(dest_cpy);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*dest;
+
+	dest = memory(s, start, len);
+	if (start > ft_strlen(s) - 1)
+	{
+		return (dest);
+	}
+	if (dest == NULL)
+	{
+		return (NULL);
+	}
+	copy(s, start, len, dest);
+	return (dest);
 }

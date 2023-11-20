@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:40:34 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:13:44 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:23:43 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dest;
 	char	*dest_cpy;
@@ -22,18 +22,18 @@ char *ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	}
 	dest_cpy = dest;
-	while(*s1 != '\0')
+	while (*s1 != '\0')
 	{
 		*dest = *s1;
 		dest++;
 		s1++;
 	}
-	while(*s2 != '\0')
+	while (*s2 != '\0')
 	{
 		*dest = *s2;
 		dest++;
 		s2++;
 	}
 	*dest = '\0';
-	return(dest_cpy);
+	return (dest_cpy);
 }

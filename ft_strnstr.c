@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:52:53 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:15:10 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 06:17:40 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-bool little_match(const char *big, const char *little)
+bool	little_match(const char *big, const char *little)
 {
 	while (*little != '\0')
 	{
@@ -22,10 +22,10 @@ bool little_match(const char *big, const char *little)
 		big++;
 		little++;
 	}
-	return(true);
+	return (true);
 }
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	int	count;
 
@@ -48,4 +48,3 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
-
