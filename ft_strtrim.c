@@ -6,70 +6,57 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 16:45:38 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/19 17:34:52 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:33:23 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <stdbool.h>
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char		*dest;
-	bool		isTrim;
-	size_t			trimCount;
+	bool		is_trim;
+	size_t		trim_count;
 	char const	*s1_cpy;
 	char const	*set_cpy;
 	char		*dest_cpy;
 
-	isTrim = false;
+	is_trim = false;
 	s1_cpy = s1;
 	set_cpy = set;
-	trimCount = 0;
+	trim_count = 0;
 
 	while(*s1 != '\0')
 	{
-		isTrim = 0;
+		is_trim = 0;
 		set = set_cpy;
 		while(*set != '\0')
 		{
 			if(*s1 == *set)
-			{
-				isTrim = 1;
-			}
+				is_trim = 1;
 			set++;
 		}
-		if (isTrim == 1)
-		{
-			trimCount++;
-		}
+		if (is_trim == 1)
+			trim_count++;
 		s1++;
 	}
 	s1 = s1_cpy;
 	set = set_cpy;
-	//printf("strlen(s1):%zu, trimCount:%zu\n", ft_strlen(s1), trimCount);
-	dest = malloc(ft_strlen(s1) - trimCount +1);
+	dest = malloc(ft_strlen(s1) - trim_count +1);
 	if(dest == NULL)
-	{
 		return(NULL);
-	}
 	else
-	{
 		dest_cpy = dest;
-	}
 	while(*s1 != '\0')
 	{
-		isTrim = 0;
+		is_trim = 0;
 		set = set_cpy;
 		while(*set != '\0')
 		{
 			if(*s1 == *set)
-			{
-				isTrim = 1;
-			}
+				is_trim = 1;
 			set++;
 		}
-		if(isTrim == 0)
+		if(is_trim == 0)
 		{
 			*dest = *s1;
 			dest++;

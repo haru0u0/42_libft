@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 10:30:32 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/19 19:13:17 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 01:29:28 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,40 @@
 #include "libft.h"
 #include <stdint.h>
 #include <limits.h>
+char addOne(unsigned int i, char c) {return (i + c);}
+void
+iter(unsigned int i, char * s) {
+	*s += i;
+}
+
+void test_ft_putstr_fd()
+{
+	printf("\n------------------ft_putstr_fd--------------------\n");
+	char s[] = "Hello World";
+	ft_putstr_fd(s, 1);
+}
+
+void test_ft_striteri()
+{
+	printf("\n------------------ft_strteri--------------------\n");
+	char s[] = "0000000000";
+	ft_striteri(s, iter);
+	printf("%s\n", s);
+}
+
+void test_ft_strmapi()
+{
+	printf("\n------------------ft_strmapi--------------------\n");
+	printf("1234: %s\n", ft_strmapi("1234", addOne));
+}
+
+void test_ft_itoa()
+{
+	printf("\n------------------ft_itoa--------------------\n");
+	printf("\n123: %s\n",ft_itoa(123));
+	printf("\n0: %s\n",ft_itoa(0));
+	printf("\n1: %s\n",ft_itoa(1));
+}
 
 void test_ft_split()
 {
@@ -477,6 +511,10 @@ int	main(void)
 	test_ft_calloc();
 	test_ft_strdup();
 	test_ft_split();
+	test_ft_itoa();
+	test_ft_strmapi();
+	test_ft_striteri();
+	test_ft_putstr_fd();
 	return (0);
 }
 

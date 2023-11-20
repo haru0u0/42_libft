@@ -6,10 +6,10 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 16:51:39 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/11 18:32:05 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:07:33 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {

@@ -6,11 +6,9 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:27:10 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 22:08:03 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:16:39 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 char *ft_substr(char const *s, unsigned int start, size_t len)

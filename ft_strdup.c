@@ -6,11 +6,10 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:05:36 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 21:09:37 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:13:28 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
-#include<stdio.h>
 
 char *ft_strdup(const char *s)
 {

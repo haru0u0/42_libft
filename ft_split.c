@@ -6,13 +6,11 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 17:35:28 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/19 22:43:49 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:13:05 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdbool.h>
 #include "libft.h"
+
 char **ft_split(char const *s, char c)
 {
 	int	row;

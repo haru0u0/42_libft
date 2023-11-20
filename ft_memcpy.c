@@ -6,10 +6,10 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:35:01 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/11 19:54:08 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:11:26 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
 
 void *ft_memcpy(void *dest, const void *src, size_t n)
 {

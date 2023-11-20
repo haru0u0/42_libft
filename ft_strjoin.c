@@ -6,10 +6,11 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:40:34 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/19 16:45:06 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:13:44 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include"libft.h"
+
 char *ft_strjoin(char const *s1, char const *s2)
 {
 	char	*dest;

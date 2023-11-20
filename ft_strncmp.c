@@ -6,10 +6,11 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 18:00:34 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/15 18:25:54 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:14:57 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stddef.h>
+#include "libft.h"
+
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	count;

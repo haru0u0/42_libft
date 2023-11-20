@@ -6,16 +6,15 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:08:21 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 21:01:17 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:20:43 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stddef.h>
-#include <stdlib.h>
-#include <limits.h>
-void *ft_calloc(size_t nmemb, size_t size)
+#include "libft.h"
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t bytes;
-	void *mem;
+	size_t	bytes;
+	void	*mem;
 
 	if (size == 0 || nmemb == 0)
 	{
@@ -23,7 +22,7 @@ void *ft_calloc(size_t nmemb, size_t size)
 		nmemb = 1;
 	}
 	bytes = nmemb * size;
-	if (bytes/size != nmemb)
+	if (bytes / size != nmemb)
 	{
 		return (NULL);
 	}
@@ -32,6 +31,5 @@ void *ft_calloc(size_t nmemb, size_t size)
 	{
 		return (NULL);
 	}
-	return mem;
+	return (mem);
 }
-

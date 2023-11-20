@@ -6,10 +6,10 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:51:35 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 19:59:44 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:07:07 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdbool.h>
+#include "libft.h"
 
 int ft_atoi(const char *nptr)
 {

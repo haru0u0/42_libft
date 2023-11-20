@@ -6,11 +6,10 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:06:35 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/12 21:43:18 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:14:01 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stddef.h>
+#include "libft.h"
 
 size_t	short_dest(size_t size, const char *src)
 {

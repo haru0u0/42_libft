@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 22:01:20 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 19:05:53 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:19:11 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	count;
 
@@ -32,7 +32,5 @@ char *ft_strrchr(const char *s, int c)
 		s--;
 		count--;
 	}
-
 	return (NULL);
 }
-

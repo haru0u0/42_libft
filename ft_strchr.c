@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:14:29 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 19:04:09 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:27:24 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+#include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != '\0')
 	{
@@ -25,6 +25,5 @@ char *ft_strchr(const char *s, int c)
 	{
 		return ((char *)s);
 	}
-
 	return (NULL);
 }

@@ -6,11 +6,11 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:34:51 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/18 18:38:37 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 02:11:13 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include<stddef.h>
-#include<stdio.h>
+#include "libft.h"
+
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	//unsigned char	*s1_casted;
