@@ -6,17 +6,15 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 21:36:06 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/12 21:36:25 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/11/20 03:24:00 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if ('A' <= c && c <= 'Z')
 	{
 		c = c + 32;
 	}
-
 	return (c);
 }
-
