@@ -17,3 +17,6 @@ fclean: clean
 re: fclean
 	make all
 
+so:
+	cc -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
