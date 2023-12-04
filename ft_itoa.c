@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 22:50:26 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/03 17:18:02 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:07:06 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 		dest++;
 		*dest = '\0';
 		dest--;
-		return(dest);
+		return (dest);
 	}
 	while (digit != 0)
 	{
@@ -81,12 +81,8 @@ char	*ft_itoa(int n)
 		dest--;
 	}
 	if (isnegative == true)
-	{
 		*dest = '-';
-	}
 	else
-	{
 		dest++;
-	}
 	return (dest);
 }

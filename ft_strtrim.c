@@ -6,7 +6,7 @@
 /*   By: hsenzaki <hsenzaki@student.42.uk>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:18:58 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/04 18:31:56 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:09:04 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -26,35 +26,31 @@ int	trimlen(char const *start, char const *end)
 
 char const	*lastcharacter(char const *s1, char const *set)
 {
-	int			count;
-	char const	*set_cpy;
+	int			s1dx;
+	int			setdx;
 	bool		ismatched;
 
-	count = 0;
-	set_cpy = set;
+	s1dx = 0;
+	setdx = 0;
 	ismatched = false;
-	while (*s1 != 0)
+	while (s1[s1dx] != 0)
+		s1dx++;
+	s1dx--;
+	while (s1dx >= 0)
 	{
-		count++;
-		s1++;
-	}
-	s1--;
-	while (count != 0)
-	{
-		while (*set != 0)
+		while (set[setdx] != 0)
 		{
-			if (*s1 == *set)
+			if (s1[s1dx] == set[setdx])
 				ismatched = true;
-			set++;
+			setdx++;
 		}
 		if (ismatched == false)
-			return (s1);
-		set = set_cpy;
+			return (s1 + s1dx);
 		ismatched = false;
-		count--;
-		s1--;
+		s1dx--;
+		setdx = 0;
 	}
-	return (s1);
+	return (s1 + s1dx);
 }
 
 char const	*firstcharacter(char const *s1, char const *set)
