@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:08:21 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 02:20:43 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/04 00:38:33 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -31,5 +31,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	{
 		return (NULL);
 	}
+	ft_memset(mem, 0, size * nmemb);
 	return (mem);
 }

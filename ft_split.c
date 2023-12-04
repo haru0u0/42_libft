@@ -6,11 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 05:14:10 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/23 17:15:42 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/04 01:21:45 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char **ft_split(char const *s, char c)
 {
@@ -29,8 +30,7 @@ char **ft_split(char const *s, char c)
 	column = 0;
 	isEmpty = true;
 
-
-	if(s[sdx] != 0)
+	if(s[sdx] != '\0')
 	{
 		while(s[sdx] == c)
 		{
@@ -57,7 +57,6 @@ char **ft_split(char const *s, char c)
 			row++;
 		}
 	}
-
 	dest = malloc((row + 1) * sizeof(char *));
 	if(dest == NULL)
 	{
@@ -123,6 +122,10 @@ char **ft_split(char const *s, char c)
 				sdx++;
 			}
 		}
+	}
+	if(s[sdx - 1] != c)
+	{
+		dest[adx][cdx] = '\0';
 	}
 	return(dest);
 }

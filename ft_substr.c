@@ -6,7 +6,7 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:27:10 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/11/20 06:09:08 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/04 01:02:26 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,7 +15,7 @@ char	*memory(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
 
-	if (start > ft_strlen(s) - 1)
+	if (start >= ft_strlen(s))
 	{
 		dest = malloc(1);
 	}
@@ -55,9 +55,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
 
-	dest = memory(s, start, len);
-	if (start > ft_strlen(s) - 1)
+	if (s == NULL)
 	{
+		return (NULL);
+	}
+	dest = memory(s, start, len);
+	if (start >= ft_strlen(s))
+	{
+		*dest = '\0';
 		return (dest);
 	}
 	if (dest == NULL)
