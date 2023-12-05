@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:52:53 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/04 00:31:29 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:32:02 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-bool	little_match(const char *big, const char *little)
+static bool	little_match(const char *big, const char *little)
 {
 	while (*little != '\0')
 	{

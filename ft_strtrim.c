@@ -6,12 +6,12 @@
 /*   By: hsenzaki <hsenzaki@student.42.uk>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:18:58 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/04 19:09:04 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:32:44 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	trimlen(char const *start, char const *end)
+static int	trimlen(char const *start, char const *end)
 {
 	int	count;
 
@@ -24,7 +24,7 @@ int	trimlen(char const *start, char const *end)
 	return (count);
 }
 
-char const	*lastcharacter(char const *s1, char const *set)
+static char const	*lastcharacter(char const *s1, char const *set)
 {
 	int			s1dx;
 	int			setdx;
@@ -53,7 +53,7 @@ char const	*lastcharacter(char const *s1, char const *set)
 	return (s1 + s1dx);
 }
 
-char const	*firstcharacter(char const *s1, char const *set)
+static char const	*firstcharacter(char const *s1, char const *set)
 {
 	char const	*set_cpy;
 	bool		ismatched;

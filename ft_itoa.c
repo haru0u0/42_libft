@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 22:50:26 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/05 00:31:59 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:26:22 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	calcdigit(int digit, int n)
+static int	calcdigit(int digit, int n)
 {
 	while (n != 0)
 	{
@@ -21,7 +21,7 @@ int	calcdigit(int digit, int n)
 	return (digit);
 }
 
-char	*putitoa(char *dest, int n, bool isnegative)
+static char	*putitoa(char *dest, int n, bool isnegative)
 {
 	*dest = '\0';
 	dest--;
@@ -38,7 +38,7 @@ char	*putitoa(char *dest, int n, bool isnegative)
 	return (dest);
 }
 
-char	*zero(void)
+static char	*zero(void)
 {
 	char	*dest;
 
@@ -50,7 +50,7 @@ char	*zero(void)
 	return (dest);
 }
 
-char	*intmin(void)
+static char	*intmin(void)
 {
 	char	*dest;
 

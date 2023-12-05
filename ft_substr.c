@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 16:27:10 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/04 01:02:26 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:33:04 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*memory(char const *s, unsigned int start, size_t len)
+static char	*memory(char const *s, unsigned int start, size_t len)
 {
 	char	*dest;
 
@@ -34,7 +34,7 @@ char	*memory(char const *s, unsigned int start, size_t len)
 	return (dest);
 }
 
-void	copy(char const *s, unsigned int start, size_t len, char *dest)
+static void	copy(char const *s, unsigned int start, size_t len, char *dest)
 {
 	while (start != 0)
 	{

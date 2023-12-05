@@ -6,12 +6,12 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 18:06:35 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/04 19:26:39 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:30:49 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	long_dest(size_t count,
+static size_t	long_dest(size_t count,
 		size_t size, char *dest, const char *src)
 {
 	while (*src != '\0' && size - 1 > count)

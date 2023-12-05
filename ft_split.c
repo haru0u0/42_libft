@@ -6,13 +6,13 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 05:14:10 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/05 02:25:41 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/05 15:29:10 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	countrow(char const *s, char c)
+static int	countrow(char const *s, char c)
 {
 	int	sdx;
 	int	row;
@@ -35,7 +35,7 @@ int	countrow(char const *s, char c)
 	return (row);
 }
 
-bool	empty(char const *s, char c)
+static bool	empty(char const *s, char c)
 {
 	if (*s == '\0')
 		return (true);
@@ -48,7 +48,7 @@ bool	empty(char const *s, char c)
 	return (true);
 }
 
-char	**ftcolumn(char const *s, char c, char **dest)
+static char	**ftcolumn(char const *s, char c, char **dest)
 {
 	int	sdx;
 	int	adx;
@@ -76,7 +76,7 @@ char	**ftcolumn(char const *s, char c, char **dest)
 	return (dest);
 }
 
-void	putsplit(char const *s, char c, char **dest)
+static void	putsplit(char const *s, char c, char **dest)
 {
 	int	adx;
 	int	cdx;
