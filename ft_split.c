@@ -6,106 +6,126 @@
 /*   By: hsenzaki <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 05:14:10 by hsenzaki          #+#    #+#             */
-/*   Updated: 2023/12/04 19:32:10 by hsenzaki         ###   ########.fr       */
+/*   Updated: 2023/12/05 02:25:41 by hsenzaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+int	countrow(char const *s, char c)
 {
-	int		row;
-	char	**dest;
-	int		adx;
-	int		cdx;
-	int		sdx;
-	int		column;
-	bool	isempty;
+	int	sdx;
+	int	row;
 
+	sdx = 0;
 	row = 0;
-	adx = 0;
-	cdx = 0;
-	sdx = 0;
-	column = 0;
-	isempty = true;
-	if (s[sdx] != '\0')
+	while (sdx < (int)ft_strlen(s))
 	{
-		while (s[sdx] == c)
-			sdx++;
-		while (sdx < (int)ft_strlen(s))
+		if (s[sdx] == c)
 		{
-			if (s[sdx] == c)
-			{
-				row++;
-				while (s[sdx] == c)
-					sdx++;
-			}
-			else
-			{
-				isempty = false;
-				sdx++;
-			}
-		}
-		if (s[sdx - 1] != c && isempty == false)
 			row++;
-	}
-	dest = malloc((row + 1) * sizeof(char *));
-	if (dest == NULL)
-	{
-		return (NULL);
-	}
-	sdx = 0;
-	if (s[sdx] != 0)
-	{
-		while (s[sdx] == c)
-			sdx++;
-		while (adx < row)
-		{
-			while (s[sdx] != c && s[sdx] != '\0')
-			{
-				column++;
-				sdx++;
-			}
-			dest[adx] = malloc((column + 1) * sizeof(char));
-			if (dest[adx] == NULL)
-			{
-				free (dest[adx]);
-				return (NULL);
-			}
 			while (s[sdx] == c)
 				sdx++;
-			adx++;
-			column = 0;
 		}
+		else
+			sdx++;
 	}
-	else
+	if (s[sdx - 1] != c)
+		row++;
+	return (row);
+}
+
+bool	empty(char const *s, char c)
+{
+	if (*s == '\0')
+		return (true);
+	while (*s != '\0')
 	{
-		dest[0] = NULL;
-		return (dest);
+		if (*s != c)
+			return (false);
+		s++;
 	}
-	dest[adx] = NULL;
+	return (true);
+}
+
+char	**ftcolumn(char const *s, char c, char **dest)
+{
+	int	sdx;
+	int	adx;
+	int	column;
+
 	sdx = 0;
 	adx = 0;
-	while (s[sdx] == c)
-		sdx++;
-	while (s[sdx] != '\0')
+	column = 0;
+	while (adx < countrow(s, c))
 	{
-		if (s[sdx] != c)
+		while (s[sdx] != c && s[sdx] != '\0')
 		{
-			dest[adx][cdx] = s[sdx];
-			cdx++;
+			column++;
 			sdx++;
 		}
-		else if (s[sdx] == c)
+		dest[adx] = malloc((column + 1) * sizeof(char));
+		if (dest[adx] == NULL)
+			return (NULL);
+		while (s[sdx] == c)
+			sdx++;
+		adx++;
+		column = 0;
+	}
+	dest[adx] = NULL;
+	return (dest);
+}
+
+void	putsplit(char const *s, char c, char **dest)
+{
+	int	adx;
+	int	cdx;
+
+	adx = 0;
+	cdx = 0;
+	while (*s != '\0')
+	{
+		if (*s != c)
+		{
+			dest[adx][cdx] = *s;
+			cdx++;
+			s++;
+		}
+		else if (*s == c)
 		{
 			dest[adx][cdx] = '\0';
 			adx++;
 			cdx = 0;
-			while (s[sdx] == c)
-				sdx++;
+			while (*s == c)
+				s++;
 		}
 	}
-	if (s[sdx - 1] != c)
+	if (*(s - 1) != c)
 		dest[adx][cdx] = '\0';
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dest;
+	char	**column;
+
+	if (empty(s, c) == true)
+	{
+		dest = malloc(1 * sizeof(char *));
+		dest[0] = NULL;
+		return (dest);
+	}
+	while (*s == c)
+		s++;
+	dest = malloc((countrow(s, c) + 1) * sizeof(char *));
+	if (dest == NULL)
+		return (NULL);
+	column = ftcolumn(s, c, dest);
+	if (column == NULL)
+	{
+		free (dest);
+		return (NULL);
+	}
+	putsplit (s, c, dest);
 	return (dest);
 }
